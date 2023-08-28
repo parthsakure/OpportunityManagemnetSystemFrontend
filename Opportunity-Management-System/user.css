@@ -1,0 +1,6 @@
+.details-flexbox{
+flex-wrap: wrap;
+-ms-flex-flow: row;
+padding: 15px;
+margin: 15px;
+}
