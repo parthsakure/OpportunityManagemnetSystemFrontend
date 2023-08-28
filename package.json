@@ -1,0 +1,12 @@
+{
+  "dependencies": {
+    "@angular/cdk": "^16.2.1",
+    "@angular/core": "^16.2.2",
+    "@angular/material": "^16.2.1",
+    "@angular/router": "^16.2.2",
+    "f": "^1.4.0"
+  },
+  "devDependencies": {
+    "@types/jest": "^29.5.4"
+  }
+}
