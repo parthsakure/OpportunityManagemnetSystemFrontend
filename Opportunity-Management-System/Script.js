@@ -27,3 +27,5 @@ createTable(document.querySelector("#app"),[
     }],
     data,
     true);
+
+    showDetailedView(document.querySelector("#app"),"opportunities",data[0],true);
