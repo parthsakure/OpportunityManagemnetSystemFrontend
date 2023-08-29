@@ -2,7 +2,7 @@
 
 function createTable(rootElement, headers, data, srno=false){
     table = document.createElement("table");
-    table.classList.add("table-auto");
+    table.classList.add("table","table-striped");
     table.classList.add("border");
     table.style.width = "80%";
     table.style.margin = "auto";
