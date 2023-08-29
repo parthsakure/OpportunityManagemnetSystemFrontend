@@ -31,7 +31,7 @@ input[type="button"]
 }
 
 /* Style the form container */
-/* .details-flexbox {
+.details-flexbox {
     align-content: center;
     display: flex;
     flex-wrap: wrap;
@@ -40,7 +40,7 @@ input[type="button"]
     padding: 1%;
      margin-left:25%;
      margin-right: 22%;
-} */
+}
 
 /* Style form labels */
 label {
@@ -52,7 +52,7 @@ label {
 
 /* Style form inputs */
 input[type="text"],
-input[type="password"] {
+input[type="password"] ,input{
     flex: 1;
     padding: 8px;
     margin-bottom: 10px;
