@@ -16,13 +16,13 @@
     <header>
         <nav class="navbar navbar-expand-sm bg-body-tertiary">
             <div class="container">
-                <a href="/" class="navbar-brand fs-4">Opportunity Management System</a>
+                <a href="#" class="navbar-brand fs-4">Opportunity Management System</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2">
-                        <li class="nav-item mx-3 fs-5"><a href="#" class="nav-link">Opportunity</a></li>
+                        <li class="nav-item mx-3 fs-5"><a href="#" class="nav-link" onclick="getOpportunities()">Opportunity</a></li>
                         <li class="nav-item mx-3 fs-5"><a href="#" class="nav-link">Transactions</a></li>
                     </ul>
                     <ul class="d-flex navbar-nav mb-2">
@@ -36,7 +36,17 @@
 
     </header>
     <div id="app" class="container"></div>
-    <script src="./table.js"></script>
-    <script src="./Script.js"></script>
+
+    <script src = "./getopportunity.js"></script>
+
+ 
+
+    <!-- <script type = "text/javascript"> 
+    var data="data";
+    </script> 
+    <script type = "text/javascript" src="./postopportunity.js"></script>  -->
+
+    <script src = "./auth.js"></script>
+    <!-- <script src = "./Startup.js"></script> -->
 </body>
 </html>
