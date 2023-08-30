@@ -20,7 +20,7 @@ const users={
     disabled:true 
 },
 "contact":{
-    type:"number",
+    type:"contact",
     disabled:false 
 },
 "email":{

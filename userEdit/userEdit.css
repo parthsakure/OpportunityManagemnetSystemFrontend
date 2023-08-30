@@ -71,13 +71,14 @@ input[type="button"] {
     margin-right: 10px;
 }
 input[type="button"]:hover {
-    padding: 10px 20px;
+    padding: 10px 25px;
     background-color: #31e369;
     color: white;
     border: none;
     border-radius: 4px;
     cursor: pointer;
     margin-right: 10px;
+    /* box-shadow: #ccc; */
     
 }
 
@@ -85,7 +86,7 @@ input[type="button"]:hover {
 input[type="button"][value="delete"] {
     background-color: #ccc;
 }
-input[type="button"][value="cancel"]:hover {
+input[type="button"][value="delete"]:hover {
     background-color: #d23535;
 }
 
@@ -96,6 +97,10 @@ input[type="button"][value="cancel"]:hover {
     align-items: center;
 }
 
+input:disabled{
+    background-color: rgb(227, 227, 227);
+    cursor:not-allowed;
+}
  /* input[type="button"]:hover{
 color: green;
 
