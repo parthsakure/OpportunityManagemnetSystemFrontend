@@ -1,6 +1,31 @@
 
 
-function createTable(rootElement, headers, data, srno=false){
+function createColumn(value, classes){
+    const columnElement = document.createElement("th");
+    if(classes) columnElement.classList.add(...classes);
+    columnElement.innerText = value;
+    return columnElement;
+}
+
+function createRow(row, headers, classes){
+    //create new row Element
+    const rowElement = document.createElement("tr");
+
+    //Add Classes if available
+    if(classes) rowElement.classList.add(...classes);
+
+    //Add values to the row
+    headers.forEach(column =>{
+        const cell = row[column.value ? column.value : column];
+        rowElement.appendChild(createCell(cell.value ? cell.value : cell, cell.classes))        
+    })
+    return rowElement;
+}
+
+
+function createTable(rootElement, data, append=false){
+    //Create Table element
+    const headers= Object.keys(data[0]);
     table = document.createElement("table");
     table.classList.add("table","table-striped");
     table.classList.add("border");
