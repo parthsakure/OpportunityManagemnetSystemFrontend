@@ -9,3 +9,5 @@ async function getDealStage()
     console.log(data);
     return data;
 }
+
+export default getDealStage;

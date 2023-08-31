@@ -63,3 +63,4 @@ async function deleteIndustry(id)
     
 }
 
+export default (getIndustries, getIndustryById, postIndustry, deleteIndustry);

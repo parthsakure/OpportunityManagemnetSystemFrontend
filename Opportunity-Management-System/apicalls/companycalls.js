@@ -82,3 +82,5 @@ async function postCompany()
         console.log("Error:", error);
     }
 }
+
+export default {getCompany, getCompanyById, updateCompany, postCompany, deleteCompany};
