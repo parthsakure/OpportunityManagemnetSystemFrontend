@@ -7,6 +7,7 @@ async function getUsers()
         });
     var data = await response.json();
     console.log(data);
+    return data;
 }
 
 async function getUsersById(id)
@@ -18,6 +19,7 @@ async function getUsersById(id)
         });
     var data = await response.json();
     console.log(data);
+    return data;
 }
 
 async function updateUser(id, data)

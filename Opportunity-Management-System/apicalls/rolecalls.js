@@ -7,6 +7,7 @@ async function getRoles()
         });
     var data = await response.json();
     console.log(data);
+    return data;
 }
 
 getRoles();

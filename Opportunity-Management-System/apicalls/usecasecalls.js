@@ -7,6 +7,7 @@ async function getUseCase()
         });
     var data = await response.json();
     console.log(data);
+    return data;
 }
 
 async function getUseCaseById(id)
@@ -18,6 +19,7 @@ async function getUseCaseById(id)
         });
     var data = await response.json();
     console.log(data);
+    return data;
 }
 
 async function updateUseCase(id, data)
