@@ -33,5 +33,13 @@ function prepareUserForDetails(data){
 
 function prepareUserForForm(data){
     let user = {}
-    user['username'] = {type:'text',disabled: false, value: data['username']}
+    user['userId'] ={name:"userId" ,type:"text" ,disabled :false, value:data['userId']}
+    user['username'] = {name:"userId" ,type:'text',disabled: true, value: data['username']}
+    user['firstName'] ={name:"first name" ,type:"text" ,disabled :false, value:data['firstName']}
+    user['lastname'] ={name:"last name" ,type:"text" ,disabled :false, value:data['lastname']}
+    user['company'] ={name:"company" ,type:"text" ,disabled :true, value:data['company']}
+    user['role'] ={name:"role" ,type:"text" ,disabled :true, value:data['role']}
+    user['constactNo'] ={name:"contact" ,type:"phone" ,disabled :false, value:data['constactNo']}
+    user['email'] ={name:"email" ,type:"email" ,disabled :true, value:data['email']}
+    
 }
