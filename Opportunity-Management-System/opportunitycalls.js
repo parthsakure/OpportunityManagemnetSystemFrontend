@@ -1,7 +1,7 @@
 async function getOpportunities()
 {
-    var apiUrl = BASE_URL+"opportunity/";
-    const response = await fetch(apiUrl);
+    var url = BASE_URL+"opportunity/";
+    const response = await fetch(url);
     var data = await response.json();
     console.log(data);
 }
@@ -45,7 +45,7 @@ async function updateOpportunity(id, data)
 {
     try
     {
-        var url = BASE_URL+"/opportunity/"+id
+        var url = BASE_URL+"opportunity/"+id
         const response = await fetch(url, 
             {
                 method: 'PUT',
@@ -69,7 +69,7 @@ async function deleteOpportunity(id, data)
 {
     try
     {
-        var url = BASE_URL+"/opportunity/"+id
+        var url = BASE_URL+"opportunity/"+id
         const response = await fetch(url, 
             {
                 method: 'DELETE',
