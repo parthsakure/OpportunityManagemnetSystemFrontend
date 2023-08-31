@@ -1,9 +1,4 @@
-function view_update_opportunity(id){
-    form = document.querySelector("#form");
-    opportunity = {};
-    opportunity['title'] = form.getElementById('title').value
-    console.log(opportunity);
-}
+
 async function view_update_opportunity(id,method){
     form = document.querySelector("#form");
     opportunity = {};
@@ -39,4 +34,31 @@ document.querySelector("#app").appendChild(createTitle(`Failed!`))
 console.log(data);
 document.querySelector('#app').innerHTML="";
 document.querySelector("#app").appendChild(createTitle(`Opportunity ${method=='PUT' ? 'Updated' : 'Created'}!`))
+}
+
+async function view_update_user(id,method){
+    form = document.querySelector("#form");
+    user = {};
+    user['userId'] = id;
+    user['username'] = form.querySelector('#username').value;
+    user['firstName'] = form.querySelector('#firstName').value;
+    user['lastName'] = form.querySelector('#lastName').value;
+    user['email'] = form.querySelector('#email').value;
+    user['contactNo'] = form.querySelector('#contactNo').value;
+    user['bbdBucks'] = form.querySelector('#bbdBucks').value;
+    user['active'] = true;
+    user['role'] = {roleId : form.querySelector('#role').value};
+    user['company'] = {companyId: form.querySelector('#company').value};
+
+    data = null;
+    if(method=='PUT') 
+    data = await updateUser(id, user);
+
+    if(data['title']==null){
+        
+    document.querySelector("#app").appendChild(createTitle(`Failed!`))
+    }
+    console.log(data);
+    document.querySelector('#app').innerHTML="";
+    document.querySelector("#app").appendChild(createTitle(`User Updated!`))
 }

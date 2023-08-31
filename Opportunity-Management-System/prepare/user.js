@@ -36,10 +36,11 @@ function prepareUserForForm(data){
     user['id'] ={name:"userId" ,type:"text" ,disabled :true, value:data['userId']}
     user['username'] = {name:"userId" ,type:'text',disabled: true, value: data['username']}
     user['firstName'] ={name:"first name" ,type:"text" ,disabled :false, value:data['firstName']}
-    user['lastname'] ={name:"last name" ,type:"text" ,disabled :false, value:data['lastName']}
+    user['lastName'] ={name:"last name" ,type:"text" ,disabled :false, value:data['lastName']}
     user['company'] ={name:"company" ,type:"dropdown" ,disabled :!isAdmin, value:data['company']}
     user['role'] ={name:"role" ,type:"dropdown" ,disabled :!isAdmin, value:data['role']['role']}
-    user['constactNo'] ={name:"contact" ,type:"phone" ,disabled :false, value:data['constactNo']}
+    user['contactNo'] ={name:"contact" ,type:"phone" ,disabled :false, value:data['contactNo']}
     user['email'] ={name:"email" ,type:"email" ,disabled :true, value:data['email']}
+    user['bbdBucks'] ={name:"bbdBucks" ,type:"number" ,disabled :true, value:data['bbdBucks']}
     return user;
 }

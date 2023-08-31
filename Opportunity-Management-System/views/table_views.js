@@ -1,7 +1,7 @@
 async function view_opportunities(){
     const opportunitiesData = await getOpportunities();
     console.log(opportunitiesData);
-    createTable(document.getElementById("app"),"Opportunities",prepareOpportunityForList(opportunitiesData),false)
+    createTable(document.getElementById("app"),"Opportunities",prepareOpportunityForList(opportunitiesData),true)
 }
 
 async function view_transactions(){
@@ -12,7 +12,7 @@ async function view_transactions(){
     else{
         transactionsData = await getMyTransactions();
     }
-    createTable(document.getElementById("app"),"Tranasctions",prepareTransactionsForList(transactionsData,isAdmin),false)
+    createTable(document.getElementById("app"),"Transactions",prepareTransactionsForList(transactionsData,isAdmin),false)
 }
 
 async function view_users(){
@@ -25,4 +25,10 @@ async function view_logout(){
     console.log("logout");
     localStorage.clear();
     location.reload();
+}
+
+
+async function view_profile(){
+    const user = await getAuthUser();
+    showDetailedView(document.getElementById('app'), user['username'], prepareUserForDetails(user),false);
 }
