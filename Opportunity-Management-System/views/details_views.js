@@ -17,3 +17,8 @@ async function veiw_company(id){
     const company = await getCompanyById(id);
     showDetailedView(document.getElementById('app'),'Company: '+company['companyName'], prepareCompanyForDetails(company), true);
 }
+
+async function view_location(id){
+    const loc = await getLocationById(id);
+    showDetailedView(document.getElementById('app'),'Location: '+loc['locationId'], prepareLocationForDetails(loc),true);
+}

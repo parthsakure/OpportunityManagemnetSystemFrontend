@@ -36,3 +36,8 @@ async function view_companies(){
     const companies = await getCompany();
     createTable(document.getElementById("app"),"Companies",prepareCompanyForList(companies),true)
 }
+
+async function view_locations(){
+    const locs = await getLocations();
+    createTable(document.getElementById("app"),"Locations",prepareLocationForList(locs),true)
+}

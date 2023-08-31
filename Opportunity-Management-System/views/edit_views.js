@@ -12,3 +12,9 @@ async function view_company_edit(id){
     const company = await getCompanyById(id);
     createForm(document.querySelector('#app'),'Update Company', prepareCompanyForForm(company),'PUT');
 }
+
+
+async function view_location_edit(id){
+    const loc = await getLocationById(id);
+    createForm(document.getElementById('app'), 'Update Location',prepareLocationForForm(loc),'PUT');
+}

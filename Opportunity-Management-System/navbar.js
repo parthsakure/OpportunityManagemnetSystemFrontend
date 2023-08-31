@@ -1,6 +1,6 @@
 function createNavItem(data){
     const item = document.createElement("li");
-    item.classList.add("nav-item",'mx-3','fs-5');
+    item.classList.add("nav-item",'mx-3','fs-6');
     const aTag = document.createElement("a");
     aTag.classList.add("nav-link")
     aTag.setAttribute("href",'#');

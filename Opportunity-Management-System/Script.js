@@ -19,6 +19,7 @@ async function main(){
     if(isAdmin){
         navbarList.push({value: "Users", callback:"view_users"});
         navbarList.push({value: "Companies", callback:"view_companies"});
+        navbarList.push({value: "Locations", callback:"view_locations"});
     }
 
     const AccountList = [
