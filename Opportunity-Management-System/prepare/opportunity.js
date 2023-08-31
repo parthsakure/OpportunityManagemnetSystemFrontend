@@ -68,7 +68,7 @@ function prepareOpportunityDetails(data){
 
 function prepareOpportunityForForm(data){
     let opportunity = {};
-    opportunity['opportunityId'] = {name:"Id", type:"text", disabled: true, value: data['opportunityId']};
+    opportunity['id'] = {name:"Id", type:"text", disabled: true, value: data['opportunityId']};
     opportunity['title'] = {name:"Title", type:"text", disabled: true, value: data['title']};
     opportunity['description'] = {name:"Description", type:"text", disabled: false, value: data['description']};
     opportunity['primaryNeed'] = {name:"Primary Need", type:"text", disabled: false, value: data['primaryNeed']};
