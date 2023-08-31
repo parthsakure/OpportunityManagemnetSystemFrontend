@@ -7,6 +7,7 @@ async function getLocations()
         });
     var data = await response.json();
     console.log(data);
+    return data;
 }
 
 async function getLocationById(id)
@@ -18,6 +19,7 @@ async function getLocationById(id)
         });
     var data = await response.json();
     console.log(data);
+    return data;
 }
 
 async function updateLocation(id, data)
@@ -60,7 +62,3 @@ async function postLocation(data)
     }
 }
 
-getLocations();
-getLocationById(id);
-updateLocation(id, data);
-postLocation(data);

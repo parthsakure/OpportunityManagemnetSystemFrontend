@@ -7,6 +7,7 @@ async function getDeliveryModels()
         });
     var data = await response.json();
     console.log(data);
+    return data;
 }
 
 async function getDeliveryModelById(id)
@@ -18,6 +19,7 @@ async function getDeliveryModelById(id)
         });
     var data = await response.json();
     console.log(data);
+    return data;
 }
 
 async function postDeliveryModel(data)
@@ -61,8 +63,3 @@ async function deleteDeliveryModel(id)
     
 }
 
-
-getDeliveryModels();
-getDeliveryModelById(id);
-postDeliveryModel(data);
-deleteDeliveryModel(id);

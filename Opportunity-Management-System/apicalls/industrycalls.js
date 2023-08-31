@@ -7,6 +7,7 @@ async function getIndustries()
         });
     var data = await response.json();
     console.log(data);
+    return data;
 }
 
 async function getIndustryById(id)
@@ -18,6 +19,7 @@ async function getIndustryById(id)
         });
     var data = await response.json();
     console.log(data);
+    return data;
 }
 
 async function postIndustry(data)
@@ -61,8 +63,3 @@ async function deleteIndustry(id)
     
 }
 
-
-getIndustries();
-getIndustryById(id);
-postIndustry(data);
-deleteIndustry(id);

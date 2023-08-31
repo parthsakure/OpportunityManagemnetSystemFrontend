@@ -7,6 +7,5 @@ async function getDealStage()
         });
     var data = await response.json();
     console.log(data);
+    return data;
 }
-
-getDealStage();

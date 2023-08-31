@@ -7,6 +7,7 @@ async function getUseCase()
         });
     var data = await response.json();
     console.log(data);
+    return data;
 }
 
 async function getUseCaseById(id)
@@ -18,6 +19,7 @@ async function getUseCaseById(id)
         });
     var data = await response.json();
     console.log(data);
+    return data;
 }
 
 async function updateUseCase(id, data)
@@ -58,8 +60,3 @@ async function deleteUseCase(id)
         console.log("Error:", error);
     }
 }
-
-getUseCase();
-getUseCaseById(id);
-updateUseCase(id, data);
-deleteUseCase(data);

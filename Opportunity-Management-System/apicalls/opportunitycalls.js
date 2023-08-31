@@ -7,6 +7,7 @@ async function getOpportunities()
     });
     var data = await response.json();
     console.log(data);
+    return data;
 }
 
 
@@ -41,6 +42,7 @@ async function getOpportunitiesById(id, active)
         });
     var data = await response.json();
     console.log(data);
+    return data;
 }
 
 
@@ -84,12 +86,3 @@ async function deleteOpportunity(id, data)
         console.log("Error:", error);
     }
 }
-
-
-
-getOpportunities();
-postOpportunity(data);
-getOpportunitiesById(id, active);
-updateOpportunity(id, data);
-deleteOpportunity(id, data);
-
