@@ -60,7 +60,17 @@ function createForm(rootElement,title, data, method) {
         options = await getCompany();
         name='companyName'
         id='companyId';
-    }
+      }
+      else if(x=='location'){
+        options = await getLocations();
+        name='postalCode'
+        id='locationId';
+      }
+      else if(x=='industry'){
+        options = await getIndustries();
+        name='industry'
+        id='industryId';
+      }
         options.forEach(item => {
             option = document.createElement('option');
             option.setAttribute('value',item[id])

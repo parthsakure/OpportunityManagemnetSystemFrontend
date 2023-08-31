@@ -54,11 +54,36 @@ async function view_update_user(id,method){
     if(method=='PUT') 
     data = await updateUser(id, user);
 
-    if(data['title']==null){
+    if(data['username']==null){
         
     document.querySelector("#app").appendChild(createTitle(`Failed!`))
     }
     console.log(data);
     document.querySelector('#app').innerHTML="";
     document.querySelector("#app").appendChild(createTitle(`User Updated!`))
+}
+
+async function view_update_company(id,method){
+    form = document.querySelector("#form");
+    company = {};
+    company['companyId'] = id;
+    company['companyName'] = form.querySelector('#companyName').value;
+    company['years'] = form.querySelector('#years').value;
+    company['location'] = {locationId:form.querySelector('#location').value};
+    company['industry'] = {industryId:form.querySelector('#industry').value};
+    company['websiteUrl'] = form.querySelector('#websiteUrl').value;
+    company['active'] = true;
+
+    console.log(company);
+    data = null;
+    if(method=='PUT') 
+    data = await updateCompany(id, company);
+
+    if(data['companyName']==null){
+        
+    document.querySelector("#app").appendChild(createTitle(`Failed!`))
+    }
+    console.log(data);
+    document.querySelector('#app').innerHTML="";
+    document.querySelector("#app").appendChild(createTitle(`Company ${method=='PUT' ? 'Updated' : 'Created'}!`))
 }

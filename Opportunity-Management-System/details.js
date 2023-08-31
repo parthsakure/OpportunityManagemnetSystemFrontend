@@ -38,13 +38,18 @@ function showDetailedView(rootElement, title, data, edit=true){
 
     if(edit){
         const div = document.createElement("div");
-        div.classList.add("text-center");
+        div.classList.add("text-center","mt-3");
         const btn = document.createElement("button");
         btn.textContent="Edit";
-        btn.classList.add('btn','btn-primary',"mt-3");
+        btn.classList.add('btn','btn-primary');
         btn.setAttribute('onClick', `view_${title.split(":")[0].toLowerCase()}_edit(${data['Id']})`);
         div.appendChild(btn);
         rootElement.appendChild(div);
+        const deleteBtn = document.createElement("button");
+        deleteBtn.classList.add('btn','btn-danger');
+        deleteBtn.setAttribute('onClick',`delete_${title.split(":")[0].toLowerCase()}(${id})`);
+        div.appendChild(deleteBtn);
+
     }
     return rootElement;
 }

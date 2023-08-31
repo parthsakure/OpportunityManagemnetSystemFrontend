@@ -17,7 +17,6 @@ async function view_transactions(){
 
 async function view_users(){
     const userData = await getUsers();
-    console.log(userData);
     createTable(document.getElementById("app"),"Users",prepareUserForList(userData),false)
 }
 
@@ -31,4 +30,9 @@ async function view_logout(){
 async function view_profile(){
     const user = await getAuthUser();
     showDetailedView(document.getElementById('app'), user['username'], prepareUserForDetails(user),false);
+}
+
+async function view_companies(){
+    const companies = await getCompany();
+    createTable(document.getElementById("app"),"Companies",prepareCompanyForList(companies),true)
 }

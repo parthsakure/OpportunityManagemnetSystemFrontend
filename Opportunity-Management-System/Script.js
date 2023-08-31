@@ -16,8 +16,10 @@ async function main(){
         {value:"Opportunities", callback: "view_opportunities"},
         {value:"Transactions", callback: "view_transactions"},
     ]
-    if(isAdmin)
-    navbarList.push({value: "Users", callback:"view_users"});
+    if(isAdmin){
+        navbarList.push({value: "Users", callback:"view_users"});
+        navbarList.push({value: "Companies", callback:"view_companies"});
+    }
 
     const AccountList = [
         {value:"Profile", callback: "view_profile"},
