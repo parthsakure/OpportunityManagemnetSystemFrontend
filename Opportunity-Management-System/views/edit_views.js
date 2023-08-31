@@ -1,6 +1,6 @@
 async function view_user_edit(id){
     const user = await getUsersById(id);
-    console.log(user);
+    createForm(document.querySelector('#app'),'Update User', prepareUserForForm(user),'PUT');
 }
 
 async function view_opportunity_edit(id){

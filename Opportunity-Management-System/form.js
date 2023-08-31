@@ -1,6 +1,7 @@
 function createForm(rootElement,title, data, method) {
   //   console.log(userP);
     //making a subroot element to store internal elements
+    console.log(data);
     const root= document.createElement("form");
     const datakeys = Object.keys(data);
     let subroot = document.createElement("div");
@@ -19,6 +20,7 @@ function createForm(rootElement,title, data, method) {
         elements = document.createElement("select")
         elements.classList.add('form-select')
         elements.setAttribute("name",x);
+        elements.setAttribute("id",x);
         subroot.appendChild(elements);      
         if (subroot.childNodes.length >= 4) {
             root.appendChild(subroot);
@@ -29,25 +31,36 @@ function createForm(rootElement,title, data, method) {
         let id = null;
         let options = await getDeliveryModels();
         if(x=='deliveryModel'){
-            options = await getDeliveryModels();
-            name = 'deliveryModel'
-            id = 'deliveryModelId'
+          options = await getDeliveryModels();
+          name = 'deliveryModel'
+          id = 'deliveryModelId'
         }
         else if(x=='dealStage'){
-            options = await getDealStages();
-            name = 'dealStage'
-            id= 'dealStageId'
+          options = await getDealStages();
+          name = 'dealStage'
+          id= 'dealStageId'
         }
         else if(x=='dealOwner' && isAdmin){
-            options = await getUsers();
-            name = 'username'
-            id= 'userId'
-        }else if(x=='useCases'){
-            options = await getUseCase();
-            name='useCase'
-            id='useCaseId';
-            elements.multiple = true;
+          options = await getUsers();
+          name = 'username'
+          id= 'userId'
         }
+        else if(x=='useCases'){
+          options = await getUseCase();
+          name='useCase'
+          id='useCaseId';
+          elements.multiple = true;
+        }
+        else if(x=='role'){
+          options = await getRoles();
+          name='role'
+          id='roleId';
+      }
+      else if(x=='company'){
+        options = await getCompany();
+        name='company'
+        id='companyId';
+    }
         options.forEach(item => {
             option = document.createElement('option');
             option.setAttribute('value',item[id])
@@ -90,7 +103,7 @@ function createForm(rootElement,title, data, method) {
     root.appendChild(div);
     root.setAttribute("id", 'form' );
     // root.setAttribute("method", method );
-    root.setAttribute("onSubmit", `view_${method=='PUT'? 'update':'create'}_${title.split(' ')[1].toLowerCase()}(${data['id']['value']}); return false;`)
+    root.setAttribute("onSubmit", `view_${method=='PUT'? 'update':'update'}_${title.split(' ')[1].toLowerCase()}(${method=='PUT' ? data['id']['value'] : 0},'${method}'); return false;`)
     rootElement.innerHTML = "";
     rootElement.appendChild(createTitle(title));
     rootElement.appendChild(root);

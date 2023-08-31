@@ -58,4 +58,14 @@ function createTable(rootElement,title, data, append=false){
     if(!append) rootElement.innerHTML = "";
     rootElement.appendChild(createTitle(title));
     rootElement.appendChild(table);
+
+    div = document.createElement("div");
+    div.classList.add('text-center','mt-4');
+    btn = document.createElement("button");
+    btn.setAttribute('onClick',`view_create_${title.toLowerCase()}()`);
+    btn.classList.add('btn','btn-success');
+    btn.innerHTML='Create';
+    div.appendChild(btn);
+    rootElement.appendChild(div);
+
 }

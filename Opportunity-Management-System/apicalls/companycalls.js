@@ -7,6 +7,7 @@ async function getCompany()
         });
     var data = await response.json();
     console.log(data);
+    return data;
 }
 
 
