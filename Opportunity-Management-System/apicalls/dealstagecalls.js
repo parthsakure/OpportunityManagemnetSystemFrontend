@@ -1,4 +1,4 @@
-async function getDealStage()
+async function getDealStages()
 {
     var url = BASE_URL+"dealstages/";
     const response = await fetch(url,

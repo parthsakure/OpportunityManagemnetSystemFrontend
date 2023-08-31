@@ -2,7 +2,7 @@ function getDealStage(dealstage){
     classes = [];
     classes.push("border");
     classes.push("rounded-pill");
-    console.log(dealstage.toLowerCase())
+    // console.log(dealstage.toLowerCase())
     switch (dealstage.toLowerCase()) {
         case "approved":
             classes.push("border-info")
@@ -51,7 +51,7 @@ function prepareOpportunityForList(data){
 function prepareOpportunityDetails(data){
     console.log(data);
     let opportunity = {};
-    opportunity["Id"] = row["opportunityId"];
+    opportunity["Id"] = data["opportunityId"];
     opportunity["Title"] = data["title"];
     if(isAdmin) opportunity["Deal Owner"] = "@" + data["dealOwner"]["username"];
     opportunity["Description"] = data["description"];
@@ -65,3 +65,20 @@ function prepareOpportunityDetails(data){
     return opportunity;
 }
 
+
+function prepareOpportunityForForm(data){
+    let opportunity = {};
+    opportunity['opportunityId'] = {name:"Id", type:"text", disabled: true, value: data['opportunityId']};
+    opportunity['title'] = {name:"Title", type:"text", disabled: true, value: data['title']};
+    opportunity['description'] = {name:"Description", type:"text", disabled: false, value: data['description']};
+    opportunity['primaryNeed'] = {name:"Primary Need", type:"text", disabled: false, value: data['primaryNeed']};
+    opportunity['expectedMonthlyRevenue'] = {name:"Expected Monthly Revenue", type:"number", disabled: false, value: data['title']};
+    opportunity['expectedLaunchDate'] = {name:"Expected Launch Date", type:"date", disabled: false, value: data['expectedLaunchDate']};
+    opportunity['closedLostReason'] = {name:"Closed Lost Reason", type:"text", disabled: !isAdmin, value: data['closedLostReason']};
+    opportunity['deliveryModel'] = {name:"Delivery Model", type:"dropdown", disabled: !isAdmin, value: data['deliveryModel']['deliveryModel']};
+    opportunity['dealStage'] = {name:"Deal Stage", type:"dropdown", disabled: !isAdmin, value: data['dealStage']['dealStage']};
+    opportunity['dealOwner'] = {name:"Deal Owner", type:"dropdown", disabled: !isAdmin, value: data['dealOwner']['username']};
+    opportunity['useCases'] = {name:"Use Cases", type:"dropdown", disabled: false, value: data['useCases']};
+
+    return opportunity;
+};
