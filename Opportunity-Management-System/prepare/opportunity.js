@@ -27,7 +27,7 @@ function getDealStage(dealstage){
 }
 
 
-function prepareOpportunityForTableData(data,isAdmin=false){
+function prepareOpportunityForList(data,isAdmin=false){
     let finalData = [];
     data.forEach(row => {
         let opportunity = {};

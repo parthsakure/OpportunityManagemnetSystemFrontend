@@ -30,7 +30,7 @@ function createRow(row, headers, classes){
     return rowElement;
 }
 
-function createTable(rootElement, data, append=false){
+function createTable(rootElement,title, data, append=false){
     //Create Table element
     const headers= Object.keys(data[0]);
     table = document.createElement("table");
@@ -48,6 +48,7 @@ function createTable(rootElement, data, append=false){
 
     //create body element
     const bodyElement = document.createElement("tbody")
+    console.log(data);
     data.forEach(row=>{
         bodyElement.appendChild(createRow(row['value'] ? row['value'] : row, headers, row['classes']));
     });
@@ -55,6 +56,6 @@ function createTable(rootElement, data, append=false){
 
     //erase everything from root element
     if(!append) rootElement.innerHTML = "";
-
+    rootElement.appendChild(createTitle(title));
     rootElement.appendChild(table);
 }

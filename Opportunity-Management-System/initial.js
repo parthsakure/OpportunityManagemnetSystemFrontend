@@ -1,7 +1,7 @@
 
 const BASE_URL= "https://opportunity-management.onrender.com/";
 const TOKEN_NAME = "jwt_token"
-
+let isAdmin = false;
 const login_html = `
 <div class="google-login">
     <p class="fs-3">You Have to login to access this site</p> 

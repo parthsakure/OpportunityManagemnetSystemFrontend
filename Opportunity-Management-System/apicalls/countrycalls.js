@@ -9,5 +9,3 @@ async function getCountry()
     console.log(data);
     return data;
 }
-
-export default getCountry;
