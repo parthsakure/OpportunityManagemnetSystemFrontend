@@ -30,3 +30,8 @@ function prepareUserForDetails(data){
     user["Role"] = data["role"]["role"].substring(5);
     return user;
 }
+
+function prepareUserForForm(data){
+    let user = {}
+    user['username'] = {type:'text',disabled: false, value: data['username']}
+}
