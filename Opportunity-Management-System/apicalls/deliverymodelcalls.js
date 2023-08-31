@@ -63,4 +63,3 @@ async function deleteDeliveryModel(id)
     
 }
 
-export default {getDeliveryModels, getDeliveryModelById, postDeliveryModel, deleteDeliveryModel};

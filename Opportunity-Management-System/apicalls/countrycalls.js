@@ -10,4 +10,3 @@ async function getCountry()
     return data;
 }
 
-export default getCountry;
