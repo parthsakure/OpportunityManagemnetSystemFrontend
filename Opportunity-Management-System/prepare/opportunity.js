@@ -1,6 +1,7 @@
 function getDealStage(dealstage){
     classes = [];
     classes.push("border");
+    classes.push("rounded-pill");
     console.log(dealstage.toLowerCase())
     switch (dealstage.toLowerCase()) {
         case "approved":
@@ -22,7 +23,7 @@ function getDealStage(dealstage){
             classes.push("bg-warning-subtle")
             break;
     }
-    return {value: dealstage,classes:classes};
+    return {value: dealstage,classes:{value:classes}};
 }
 
 
@@ -56,7 +57,7 @@ function prepareOpportunityDetails(data,isAdmin=false){
     opportunity["Primary Need"] = data["primaryNeed"];
     opportunity["Expected Monthly Revenue"] = data["expectedMonthlyRevenue"];
     opportunity["Expected Launch Date"] = data["expectedLaunchDate"];
-    opportunity["Active"] = {value: data["active"],classes:{value:[data["active"] ? "bg-success-subtle" : "bg-light-subtle"]}};
+    opportunity["Active"] = {value: data["active"],classes:{value:data["active"]?[ "bg-success-subtle","border","border-success","rounded-pill" ]: ["bg-danger-subtle","border","border-danger","rounded-pill" ]}};
     opportunity["Delivery Model"] = data["deliveryModel"]["deliveryModel"];
     opportunity["Deal Stage"] = getDealStage(data["dealStage"]["dealStage"]);
 

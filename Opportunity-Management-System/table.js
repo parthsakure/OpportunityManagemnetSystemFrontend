@@ -24,8 +24,8 @@ function createRow(row, headers, classes){
 
     //Add values to the row
     headers.forEach(column =>{
-        const cell = row[column.value ? column.value : column];
-        rowElement.appendChild(createCell(cell.value ? cell.value : cell, cell.classes))        
+        const cell = row[column['value'] ? column['value'] : column];
+        rowElement.appendChild(createCell(cell['value'] ? cell['value'] : cell, cell['classes']))        
     })
     return rowElement;
 }
@@ -49,7 +49,7 @@ function createTable(rootElement, data, append=false){
     //create body element
     const bodyElement = document.createElement("tbody")
     data.forEach(row=>{
-        bodyElement.appendChild(createRow(row.value ? row.value : row, headers, row.classes));
+        bodyElement.appendChild(createRow(row['value'] ? row['value'] : row, headers, row['classes']));
     });
     table.appendChild(bodyElement);
 
