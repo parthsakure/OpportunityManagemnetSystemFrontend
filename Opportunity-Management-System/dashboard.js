@@ -2,7 +2,7 @@
     console.log(data)
 
   const root = document.createElement("div");
-  root.classList.add("row","h-50")
+  root.classList.add("row",'row-cols-4')
 //   root.setAttribute('class',"card")
 
    data.forEach((x) => {

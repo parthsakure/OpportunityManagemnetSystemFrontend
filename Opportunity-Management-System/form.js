@@ -71,6 +71,11 @@ function createForm(rootElement,title, data, method) {
         name='industry'
         id='industryId';
       }
+      else if(x=='country'){
+        options = await getCountry();
+        name='country'
+        id='countryId';
+      }
         options.forEach(item => {
             option = document.createElement('option');
             option.setAttribute('value',item[id])
