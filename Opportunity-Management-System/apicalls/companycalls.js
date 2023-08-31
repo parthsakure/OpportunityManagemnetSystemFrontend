@@ -83,4 +83,3 @@ async function postCompany()
     }
 }
 
-export default {getCompany, getCompanyById, updateCompany, postCompany, deleteCompany};
