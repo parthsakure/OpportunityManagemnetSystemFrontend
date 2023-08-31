@@ -1,14 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" 
-    integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
-    <link rel="stylesheet" href="style.css">
-    
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="referrer" content="no-referrer-when-downgrade">
+        <meta name="Cross-Origin-Opener-Policy" content="same-origin-allow-popups">
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" 
+        integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+        <link rel="stylesheet" href="style.css">
+        
+        
+        <!-- <script src="https://accounts.google.com/gsi/client" async defer></script> -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+        
+    <script src="./initial.js"></script>
 
     <title>Opportunity Management System</title>
 </head>
@@ -35,12 +41,40 @@
         </nav>
 
     </header>
+
     <div id="app" class="container"></div>
-    <script src="./initial.js"></script>
+
+    <div class="">
+        <div id="g_id_onload"
+            data-client_id="608041237414-nejmrfub71mnuq6r8j84aduj87fhttuu.apps.googleusercontent.com"
+            data-context="signin"
+            data-ux_mode="redirect"
+            data-login_uri="http://localhost:5500/Opportunity-Management-System"
+            data-nonce=""
+            data-auto_select="true"
+            data-callback="HandleToken"
+            data-itp_support="true">
+        </div>
+
+        <div class="g_id_signin"
+            data-type="standard"
+            data-shape="pill"
+            data-theme="filled_black"
+            data-text="signin_with"
+            data-size="large"
+            data-locale="en-US"
+            data-logo_alignment="left">
+        </div>
+    </div>
+
     <script src="./prepareOpportunity.js"></script>
 
     <script src="./table.js"></script>
     <script src="./details.js"></script>
     <script src="./Script.js"></script>
+
 </body>
+
+<script src="https://accounts.google.com/gsi/client" async defer></script>
+
 </html>
