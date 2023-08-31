@@ -76,16 +76,23 @@ async function view_update_company(id,method){
 
     console.log(company);
     data = null;
-    if(method=='PUT') 
-    data = await updateCompany(id, company);
-
+    if(method=='PUT') {
+        data = await updateCompany(id, company);
+    }
+    else{
+        company['companyId'] = 0;
+        data = await postCompany(company);
+    }
+    document.querySelector('#app').innerHTML="";
     if(data['companyName']==null){
         
         document.querySelector("#app").appendChild(createTitle(`Failed!`))
     }
-    console.log(data);
-    document.querySelector('#app').innerHTML="";
-    document.querySelector("#app").appendChild(createTitle(`Company ${method=='PUT' ? 'Updated' : 'Created'}!`))
+    else{
+        console.log(data);
+        document.querySelector("#app").appendChild(createTitle(`Company ${method=='PUT' ? 'Updated' : 'Created'}!`))
+    }
+
 }
 
 async function view_update_location(id,method){

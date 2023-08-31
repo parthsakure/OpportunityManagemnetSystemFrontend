@@ -65,7 +65,7 @@ async function deleteCompany(id)
 }
 
 
-async function postCompany()
+async function postCompany(data)
 {
     try
     {
