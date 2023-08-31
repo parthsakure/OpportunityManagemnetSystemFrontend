@@ -11,7 +11,7 @@ async function getAdminStatus(){
 }
 
 async function main(){
-    isAdmin = getAdminStatus();
+    isAdmin = await getAdminStatus();
     const navbarList = [
         {value:"Opportunities", callback: "view_opportunities"},
         {value:"Transactions", callback: "view_transactions"},
