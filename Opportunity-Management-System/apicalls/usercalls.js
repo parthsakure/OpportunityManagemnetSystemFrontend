@@ -60,8 +60,3 @@ async function deleteUser(id)
         console.log("Error:", error);
     }
 }
-
-getUsers();
-getUsersById();
-updateUser(id, data);
-deleteUser(id);

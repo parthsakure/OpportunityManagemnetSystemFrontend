@@ -62,7 +62,3 @@ async function postLocation(data)
     }
 }
 
-getLocations();
-getLocationById(id);
-updateLocation(id, data);
-postLocation(data);

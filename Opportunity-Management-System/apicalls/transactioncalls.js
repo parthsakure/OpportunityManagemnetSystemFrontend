@@ -21,6 +21,3 @@ async function getMyTransactions()
     console.log(data);  
     return data; 
 }
-
-getAllTransactions();
-getMyTransactions();

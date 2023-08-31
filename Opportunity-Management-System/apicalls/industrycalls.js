@@ -63,8 +63,3 @@ async function deleteIndustry(id)
     
 }
 
-
-getIndustries();
-getIndustryById(id);
-postIndustry(data);
-deleteIndustry(id);

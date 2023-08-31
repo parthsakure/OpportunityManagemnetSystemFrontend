@@ -9,5 +9,3 @@ async function getRoles()
     console.log(data);
     return data;
 }
-
-getRoles();

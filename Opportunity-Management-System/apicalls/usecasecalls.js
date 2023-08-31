@@ -60,8 +60,3 @@ async function deleteUseCase(id)
         console.log("Error:", error);
     }
 }
-
-getUseCase();
-getUseCaseById(id);
-updateUseCase(id, data);
-deleteUseCase(data);

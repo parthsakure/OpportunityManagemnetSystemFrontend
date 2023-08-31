@@ -10,5 +10,3 @@ async function getCountry()
     return data;
 }
 
-
-getCountry();

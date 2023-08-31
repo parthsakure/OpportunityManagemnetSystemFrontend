@@ -86,12 +86,3 @@ async function deleteOpportunity(id, data)
         console.log("Error:", error);
     }
 }
-
-
-
-getOpportunities();
-postOpportunity(data);
-getOpportunitiesById(id, active);
-updateOpportunity(id, data);
-deleteOpportunity(id, data);
-

@@ -63,8 +63,3 @@ async function deleteDeliveryModel(id)
     
 }
 
-
-getDeliveryModels();
-getDeliveryModelById(id);
-postDeliveryModel(data);
-deleteDeliveryModel(id);

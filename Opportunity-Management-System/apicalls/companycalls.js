@@ -82,9 +82,3 @@ async function postCompany()
         console.log("Error:", error);
     }
 }
-
-getCompany();
-getCompanyById(id);
-updateCompany(id, data);
-deleteCompany(id);
-postCompany();
