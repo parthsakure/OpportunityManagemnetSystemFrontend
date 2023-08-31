@@ -6,7 +6,7 @@ function prepareTransactionsForList(data, isAdmin=false) {
         transaction["Opportunity"] = trData["opportunity"]["title"];
         transaction["Deal Stage"] = trData["dealStage"]["dealStage"];
         transaction["Reward"] = trData["dealStage"]["rewardPrice"];
-        transactions.push(transaction);
+        transactions.push({value:transaction});
     });
     return transactions;
 }

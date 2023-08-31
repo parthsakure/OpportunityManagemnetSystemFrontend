@@ -57,7 +57,6 @@ function parseJwt (token) {
 
 
 function saveToken(data){
-    // console.log(parseJwt(data))
     localStorage.setItem(TOKEN_NAME, data);
     location.reload();
 }

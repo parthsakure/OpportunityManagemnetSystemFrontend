@@ -17,6 +17,7 @@ function prepareUserForList(data){
 
 function prepareUserForDetails(data){
     let user = {};
+    user['Id'] = data["userId"]; 
     user['Username'] = data["username"]; 
     user['First Name'] = data["firstName"];
     user["Last Name"] = data["lastName"]; 

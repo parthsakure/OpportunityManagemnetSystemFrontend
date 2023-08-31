@@ -6,6 +6,5 @@ async function getAuthUser()
             headers: getHeader()
         });
     var data = await response.json();
-    console.log(data);
     return data;
 }

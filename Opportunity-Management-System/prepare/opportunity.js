@@ -51,6 +51,7 @@ function prepareOpportunityForList(data){
 function prepareOpportunityDetails(data){
     console.log(data);
     let opportunity = {};
+    opportunity["Id"] = row["opportunityId"];
     opportunity["Title"] = data["title"];
     if(isAdmin) opportunity["Deal Owner"] = "@" + data["dealOwner"]["username"];
     opportunity["Description"] = data["description"];
