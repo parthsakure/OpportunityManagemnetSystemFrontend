@@ -21,3 +21,8 @@ async function view_users(){
     createTable(document.getElementById("app"),"Users",prepareUserForList(userData),false)
 }
 
+async function view_logout(){
+    console.log("logout");
+    localStorage.clear();
+    location.reload();
+}
