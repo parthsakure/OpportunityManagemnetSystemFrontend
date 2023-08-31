@@ -127,6 +127,7 @@ async function formating(root, user,role) {
     root.appendChild(subroot);
   }
 }
+
 async function editUser(role) {
   console.log((await role)[0]);
   
