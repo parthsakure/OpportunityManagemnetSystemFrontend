@@ -2,6 +2,13 @@ const data = [{"opportunityId":2,"title":"Parth's","description":"description","
 
 
 
-    showDetailedView(document.querySelector("#app"),"opportunities",prepareOpportunityDetails(data[0]),true);
+showDetailedView(document.querySelector("#app"),"opportunities",prepareOpportunityDetails(data[0]),true);
 
-createTable(document.querySelector("#app"),data,true);
+if(localStorage.getItem(TOKEN_NAME)==null){
+    document.body.innerHTML =login_html
+    // document.querySelector(".hidden").style.display='block';
+}
+else{
+    
+    // document.querySelector(".hidden").style.display='none';
+}
