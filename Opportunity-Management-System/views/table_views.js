@@ -1,5 +1,6 @@
 async function view_opportunities(){
     const opportunitiesData = await getOpportunities();
+    console.log(opportunitiesData);
     createTable(document.getElementById("app"),"Opportunities",prepareOpportunityForList(opportunitiesData),false)
 }
 
@@ -20,8 +21,3 @@ async function view_users(){
     createTable(document.getElementById("app"),"Users",prepareUserForList(userData),false)
 }
 
-async function view_user(id){
-    const user = await getUsersById(id);
-    console.log(user);
-    showDetailedView(document.getElementById("app"),"User: "+user['username'], prepareUserForDetails(user),false);
-}

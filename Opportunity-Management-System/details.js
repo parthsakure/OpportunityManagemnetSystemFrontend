@@ -29,8 +29,21 @@ function showDetailedView(rootElement, title, data, append=false){
     
     if(!append) rootElement.innerHTML = "";
     rootElement.appendChild(createTitle(title));
+    let id=null;
     Object.keys(data).forEach(key=>{
         rootElement.append(createField(key, data[key].value ? data[key].value : data[key], data[key].classes ? data[key].classes : []));
+        if(key.toLowerCase().includes("id")){
+            id = data[key];
+        }
     });
+
+    const div = document.createElement("div");
+    div.classList.add("text-center");
+    const btn = document.createElement("button");
+    btn.textContent="Edit";
+    btn.classList.add('btn','btn-primary',"mt-3");
+    btn.setAttribute('onClick', `view_${title.split(":")[0].toLowerCase()}_edit(${id})`);
+    div.appendChild(btn);
+    rootElement.appendChild(div);
     return rootElement;
 }

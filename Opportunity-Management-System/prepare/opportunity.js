@@ -27,7 +27,7 @@ function getDealStage(dealstage){
 }
 
 
-function prepareOpportunityForList(data,isAdmin=false){
+function prepareOpportunityForList(data){
     let finalData = [];
     data.forEach(row => {
         let opportunity = {};
@@ -42,22 +42,22 @@ function prepareOpportunityForList(data,isAdmin=false){
         if(!row["active"]){
             classes.push("disabled");
         }
-        
-        finalData.push(opportunity);
+        finalData.push({value:opportunity, callback:`view_opportunity(${row['opportunityId']},${row['active']})`});
     });
     return finalData;
 }
 
 
-function prepareOpportunityDetails(data,isAdmin=false){
+function prepareOpportunityDetails(data){
+    console.log(data);
     let opportunity = {};
     opportunity["Title"] = data["title"];
-    if(!isAdmin) opportunity["Deal Owner"] = "@" + data["dealOwner"]["username"];
+    if(isAdmin) opportunity["Deal Owner"] = "@" + data["dealOwner"]["username"];
     opportunity["Description"] = data["description"];
     opportunity["Primary Need"] = data["primaryNeed"];
     opportunity["Expected Monthly Revenue"] = data["expectedMonthlyRevenue"];
     opportunity["Expected Launch Date"] = data["expectedLaunchDate"];
-    opportunity["Active"] = {value: data["active"],classes:{value:data["active"]?[ "bg-success-subtle","border","border-success","rounded-pill" ]: ["bg-danger-subtle","border","border-danger","rounded-pill" ]}};
+    opportunity["Active"] = {value: data["active"] ? "Active" : "Not Active",classes:{value:data["active"]?[ "bg-success-subtle","border","border-success","rounded-pill" ]: ["bg-danger-subtle","border","border-danger","rounded-pill" ]}};
     opportunity["Delivery Model"] = data["deliveryModel"]["deliveryModel"];
     opportunity["Deal Stage"] = getDealStage(data["dealStage"]["dealStage"]);
 
