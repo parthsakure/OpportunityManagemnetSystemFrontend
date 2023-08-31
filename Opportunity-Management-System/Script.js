@@ -25,6 +25,7 @@ async function main(){
     ]
     document.querySelector(".collapse").appendChild(createNavBar(navbarList));
     document.querySelector(".collapse").appendChild(createNavBar(AccountList));
+    document.querySelector("#app").appendChild(dashboardcards(navbarList));
 }
 
 main();
