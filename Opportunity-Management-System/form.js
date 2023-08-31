@@ -58,7 +58,7 @@ function createForm(rootElement,title, data, method) {
       }
       else if(x=='company'){
         options = await getCompany();
-        name='company'
+        name='companyName'
         id='companyId';
     }
         options.forEach(item => {

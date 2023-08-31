@@ -25,9 +25,9 @@ function createField(key, value, classes){
 }
 
 
-function showDetailedView(rootElement, title, data, append=false){
+function showDetailedView(rootElement, title, data, edit=true){
     
-    if(!append) rootElement.innerHTML = "";
+    rootElement.innerHTML = "";
     rootElement.appendChild(createTitle(title));
     Object.keys(data).forEach(key=>{
         rootElement.append(createField(key, data[key].value ? data[key].value : data[key], data[key].classes ? data[key].classes : []));
@@ -36,13 +36,15 @@ function showDetailedView(rootElement, title, data, append=false){
         }
     });
 
-    const div = document.createElement("div");
-    div.classList.add("text-center");
-    const btn = document.createElement("button");
-    btn.textContent="Edit";
-    btn.classList.add('btn','btn-primary',"mt-3");
-    btn.setAttribute('onClick', `view_${title.split(":")[0].toLowerCase()}_edit(${data['Id']})`);
-    div.appendChild(btn);
-    rootElement.appendChild(div);
+    if(edit){
+        const div = document.createElement("div");
+        div.classList.add("text-center");
+        const btn = document.createElement("button");
+        btn.textContent="Edit";
+        btn.classList.add('btn','btn-primary',"mt-3");
+        btn.setAttribute('onClick', `view_${title.split(":")[0].toLowerCase()}_edit(${data['Id']})`);
+        div.appendChild(btn);
+        rootElement.appendChild(div);
+    }
     return rootElement;
 }

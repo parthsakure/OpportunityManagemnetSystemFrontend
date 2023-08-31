@@ -31,7 +31,7 @@ function createRow(row, headers, classes,callback){
     return rowElement;
 }
 
-function createTable(rootElement,title, data, append=false){
+function createTable(rootElement,title, data, create=false){
     //Create Table element
     const headers= Object.keys(data[0]["value"]);
     table = document.createElement("table");
@@ -55,17 +55,19 @@ function createTable(rootElement,title, data, append=false){
     table.appendChild(bodyElement);
 
     //erase everything from root element
-    if(!append) rootElement.innerHTML = "";
+    rootElement.innerHTML = "";
     rootElement.appendChild(createTitle(title));
     rootElement.appendChild(table);
 
-    div = document.createElement("div");
-    div.classList.add('text-center','mt-4');
-    btn = document.createElement("button");
-    btn.setAttribute('onClick',`view_create_${title.toLowerCase()}()`);
-    btn.classList.add('btn','btn-success');
-    btn.innerHTML='Create';
-    div.appendChild(btn);
-    rootElement.appendChild(div);
+    if(create){
+        div = document.createElement("div");
+        div.classList.add('text-center','mt-4');
+        btn = document.createElement("button");
+        btn.setAttribute('onClick',`view_create_${title.toLowerCase()}()`);
+        btn.classList.add('btn','btn-success');
+        btn.innerHTML='Create';
+        div.appendChild(btn);
+        rootElement.appendChild(div);
+    }
 
 }
