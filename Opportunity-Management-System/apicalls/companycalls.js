@@ -1,6 +1,6 @@
 async function getCompany()
 {
-    var url = BASE_URL+"company/";
+    var url = BASE_URL+"company/?active=true";
     const response = await fetch(url,
         {
             headers: getHeader()
