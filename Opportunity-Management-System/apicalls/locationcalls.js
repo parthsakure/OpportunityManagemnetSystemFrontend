@@ -62,3 +62,4 @@ async function postLocation(data)
     }
 }
 
+export default {getLocations, getLocationById, updateLocation, postLocation}

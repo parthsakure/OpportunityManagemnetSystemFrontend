@@ -9,3 +9,5 @@ async function getAuthUser()
     console.log(data);
     return data;
 }
+
+export default getAuthUser;
