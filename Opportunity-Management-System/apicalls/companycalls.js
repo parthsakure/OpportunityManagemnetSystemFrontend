@@ -13,7 +13,7 @@ async function getCompany()
 
 async function getCompanyById(id)
 {
-    var url = BASE_URL+"company/"+id;
+    var url = BASE_URL+"company/"+id+"?active=true";
     const response = await fetch(url,
         {
             headers: getHeader()
@@ -27,7 +27,7 @@ async function updateCompany(id, data)
 {
     try
     {
-        var url = BASE_URL+"company/"+id
+        var url = BASE_URL+"company/"+id;
         const response = await fetch(url, 
             {
                 method: 'PUT',
