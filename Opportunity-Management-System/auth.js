@@ -26,7 +26,7 @@ function oauthSignIn() {
     var params = {'client_id': '608041237414-nejmrfub71mnuq6r8j84aduj87fhttuu.apps.googleusercontent.com',
                   'redirect_uri': "http://localhost:5500/dashboard",
                   'response_type': 'token',
-                  'scope': 'https://www.googleapis.com/auth/userinfo.profile',
+                  'scope': 'https://www.googleapis.com/openid',
                   'include_granted_scopes': 'true',
                   'state': 'pass-through value'};
   
