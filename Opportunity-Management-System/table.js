@@ -15,10 +15,11 @@ function createColumn(value, classes){
     return columnElement;
 }
 
-function createRow(row, headers, classes){
+function createRow(row, headers, classes,callback){
     //create new row Element
     const rowElement = document.createElement("tr");
-
+    rowElement.setAttribute("onClick", callback);
+    rowElement.style.cursor="pointer";
     //Add Classes if available
     if(classes) rowElement.classList.add(...classes);
 
@@ -32,7 +33,7 @@ function createRow(row, headers, classes){
 
 function createTable(rootElement,title, data, append=false){
     //Create Table element
-    const headers= Object.keys(data[0]);
+    const headers= Object.keys(data[0]["value"]);
     table = document.createElement("table");
     table.classList.add("table","table-striped");
 
@@ -48,9 +49,8 @@ function createTable(rootElement,title, data, append=false){
 
     //create body element
     const bodyElement = document.createElement("tbody")
-    console.log(data);
     data.forEach(row=>{
-        bodyElement.appendChild(createRow(row['value'] ? row['value'] : row, headers, row['classes']));
+        bodyElement.appendChild(createRow(row['value'] ? row['value'] : row, headers, row['classes'],row['callback']));
     });
     table.appendChild(bodyElement);
 

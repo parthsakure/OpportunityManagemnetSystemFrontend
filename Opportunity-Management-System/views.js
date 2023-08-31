@@ -15,6 +15,13 @@ async function view_transactions(){
 }
 
 async function view_users(){
-    const userData = await getAllTransactions();
-    createTable(document.getElementById("app"),"Users",prepareUserForList(transactionsData),false)
+    const userData = await getUsers();
+    console.log(userData);
+    createTable(document.getElementById("app"),"Users",prepareUserForList(userData),false)
+}
+
+async function view_user(id){
+    const user = await getUsersById(id);
+    console.log(user);
+    showDetailedView(document.getElementById("app"),"User: "+user['username'], prepareUserForDetails(user),false);
 }

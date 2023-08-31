@@ -10,7 +10,7 @@ function prepareUserForList(data){
         user['Active'] = {value:isActive ? "Active" : "Not Active" ,classes:(isActive ? ["bg-success-subtle", "border", "border-success"] :["bg-danger-subtle", "border", "border-danger"])}; 
         user["Role"] = userdata["role"]["role"].substring(5);
 
-        users.push(user);
+        users.push({value: user,callback:`view_user(${userdata["userId"]})`});
     })
     return users;
 }
