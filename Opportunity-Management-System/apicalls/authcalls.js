@@ -9,3 +9,4 @@ async function getAuthUser()
     console.log(data);
     return data;
 }
+getAuthUser()
