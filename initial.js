@@ -1,5 +1,5 @@
 
-const BASE_URL= "https://opportunity-management.onrender.com/";
+const BASE_URL= "https://opportunity-p97n.onrender.com/";
 const TOKEN_NAME = "jwt_token"
 let isAdmin = false;
 const login_html = `
