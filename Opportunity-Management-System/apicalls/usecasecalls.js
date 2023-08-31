@@ -60,3 +60,4 @@ async function deleteUseCase(id)
         console.log("Error:", error);
     }
 }
+export default {deleteUseCase,updateUseCase,getUseCase,getUseCaseById}

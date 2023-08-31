@@ -60,3 +60,4 @@ async function deleteUser(id)
         console.log("Error:", error);
     }
 }
+export default{ deleteUser,updateUser,getUsers, getUsersById}

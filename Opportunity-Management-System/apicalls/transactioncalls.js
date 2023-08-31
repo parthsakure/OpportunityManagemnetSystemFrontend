@@ -21,3 +21,4 @@ async function getMyTransactions()
     console.log(data);  
     return data; 
 }
+export default { getAllTransactions,getMyTransactions}
