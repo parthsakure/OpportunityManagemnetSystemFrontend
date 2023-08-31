@@ -1,7 +1,10 @@
 async function getOpportunities()
 {
     var url = BASE_URL+"opportunity/";
-    const response = await fetch(url);
+    const response = await fetch(url, 
+    {
+        headers: getHeader()
+    });
     var data = await response.json();
     console.log(data);
 }
@@ -15,10 +18,7 @@ async function postOpportunity(data)
         const response = await fetch(url, 
             {
                 method: 'POST',
-                headers: 
-                {
-                    'Content-type': 'application/json'
-                },
+                headers: getHeader(),
                 body: JSON.stringify(data) 
             });
 
@@ -35,7 +35,10 @@ async function postOpportunity(data)
 async function getOpportunitiesById(id, active)
 {
     var url = BASE_URL+"opportunity/"+id+"?active="+active;
-    const response = await fetch(url);
+    const response = await fetch(url, 
+        {
+            headers: getHeader()
+        });
     var data = await response.json();
     console.log(data);
 }
@@ -49,10 +52,7 @@ async function updateOpportunity(id, data)
         const response = await fetch(url, 
             {
                 method: 'PUT',
-                headers: 
-                {
-                    'Content-type': 'application/json'
-                },
+                headers: getHeader(),
                 body: JSON.stringify(data)
             });
     
@@ -73,10 +73,7 @@ async function deleteOpportunity(id, data)
         const response = await fetch(url, 
             {
                 method: 'DELETE',
-                headers: 
-                {
-                    'Content-type': 'application/json'
-                },
+                headers: getHeader(),
                 body: JSON.stringify(data)
             });
     
