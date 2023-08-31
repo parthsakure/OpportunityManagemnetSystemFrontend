@@ -62,4 +62,4 @@ async function postLocation(data)
     }
 }
 
-export default {getLocations, getLocationById, updateLocation, postLocation}
+export default {getLocations, getLocationById, updateLocation, postLocation};
