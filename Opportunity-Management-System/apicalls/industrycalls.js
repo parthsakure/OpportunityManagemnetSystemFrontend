@@ -1,7 +1,10 @@
 async function getIndustries()
 {
     var url = BASE_URL+"industry/";
-    const response = await fetch(url);
+    const response = await fetch(url,
+        {
+            headers: getHeader()
+        });
     var data = await response.json();
     console.log(data);
 }
@@ -9,7 +12,10 @@ async function getIndustries()
 async function getIndustryById(id)
 {
     var url = BASE_URL+"industry/"+id;
-    const response = await fetch(url);
+    const response = await fetch(url,
+        {
+            headers: getHeader()
+        });
     var data = await response.json();
     console.log(data);
 }
@@ -22,10 +28,7 @@ async function postIndustry(data)
         const response = await fetch(url, 
             {
                 method: 'POST',
-                headers: 
-                {
-                    'Content-type': 'application/json'
-                },
+                headers: getHeader(),
                 body: JSON.stringify(data) 
             });
 
@@ -46,10 +49,7 @@ async function deleteIndustry(id)
         const response = await fetch(url, 
             {
                 method: 'DELETE',
-                headers: 
-                {
-                    'Content-type': 'application/json'
-                }
+                headers: getHeader()
             });
     
             const resData = await response.json();

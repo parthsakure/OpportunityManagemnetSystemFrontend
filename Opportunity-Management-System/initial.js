@@ -1,4 +1,4 @@
-const BASE_URL= "https://opportunity-management.onrender.com";
+const BASE_URL= "https://opportunity-management.onrender.com/";
 const TOKEN_NAME = "jwt_token"
 
 const login_html = `
@@ -38,7 +38,9 @@ function getHeader(){
     if(token==null){
         return {};
     }
-    return {Authorization: "Bearer "+token};
+    return {Authorization: "Bearer "+token,
+    'Content-type': 'application/json'
+};
 }
 
 

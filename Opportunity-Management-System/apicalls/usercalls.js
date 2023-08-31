@@ -1,7 +1,10 @@
 async function getUsers()
 {
     var url = BASE_URL+"user/";
-    const response = await fetch(url);
+    const response = await fetch(url,
+        {
+            headers: getHeader()
+        });
     var data = await response.json();
     console.log(data);
 }
@@ -9,7 +12,10 @@ async function getUsers()
 async function getUsersById(id)
 {
     var url = BASE_URL+"user/"+id;
-    const response = await fetch(url);
+    const response = await fetch(url,
+        {
+            headers: getHeader()
+        });
     var data = await response.json();
     console.log(data);
 }
@@ -22,10 +28,7 @@ async function updateUser(id, data)
         const response = await fetch(url, 
             {
                 method: 'PUT',
-                headers: 
-                {
-                    'Content-type': 'application/json'
-                },
+                headers: getHeader(),
                 body: JSON.stringify(data)
             });
     
@@ -45,10 +48,7 @@ async function deleteUser(id)
         const response = await fetch(url, 
             {
                 method: 'DELETE',
-                headers: 
-                {
-                    'Content-type': 'application/json'
-                }
+                headers: getHeader()
             });
     
             const resData = await response.json();
