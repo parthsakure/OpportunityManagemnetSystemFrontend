@@ -86,4 +86,3 @@ async function deleteOpportunity(id, data)
         console.log("Error:", error);
     }
 }
-export default {getOpportunities,getOpportunitiesById,updateOpportunity,deleteOpportunity,postOpportunity}

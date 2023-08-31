@@ -9,4 +9,3 @@ async function getRoles()
     console.log(data);
     return data;
 }
-export default getRoles
