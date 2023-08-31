@@ -1,17 +1,20 @@
-function getDealStageClasses(dealstage){
+function getDealStage(dealstage){
     classes = [];
     classes.push("border");
     console.log(dealstage.toLowerCase())
     switch (dealstage.toLowerCase()) {
         case "approved":
+            classes.push("border-info")
             classes.push("border-info-subtle")
             break;
         
         case "closed/lost":
+            classes.push("border-danger")
             classes.push("bg-danger-subtle")
             break;
 
         case "launched":
+            classes.push("border-success")
             classes.push("bg-success-subtle")
             break;
         default:
