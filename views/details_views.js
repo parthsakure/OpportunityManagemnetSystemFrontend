@@ -8,7 +8,7 @@ async function view_opportunity(id,active){
 
 async function view_user(id){
     const user = await getUsersById(id);
-    showDetailedView(document.getElementById("app"),"User: "+user['username'], prepareUserForDetails(user),false);
+    showDetailedView(document.getElementById("app"),"User: "+user['username'], prepareUserForDetails(user),true);
 }
 
 

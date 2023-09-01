@@ -1,24 +1,33 @@
-function deletecomp(sourc){
+function deletecomp(data){
     const element =document.createElement("div")
     element.classList.add("modal-body")
     const title =document.createElement("h5")
-    title.innerHTML= "are you sure about deleting this record"
-    // title.appendChild(title)
+    title.innerHTML= `Are you sure about deleting ${data['name']}?`
     element.appendChild(title)
+
+    if(data['entity'] == 'opportunity'){
+        const input = document.createElement("input");
+        input.setAttribute('name','oppotunity');
+        input.setAttribute('type','text');
+        input.placeholder = "Enter Closed Lost Reason";
+        input.required = true;
+        input.setAttribute('id','reason');
+        element.appendChild(input);
+    }
+
+    // title.appendChild(title)
     const button =document.createElement("button")
     button.classList.add("btn","btn-light")
     button.innerHTML= "cancel"
-    buttond.setAttribute('onClick')
+    button.setAttribute('onClick',"")
     element.appendChild(button)
 
     const buttond =document.createElement("button")
     buttond.classList.add("btn","btn-danger")
     buttond.innerHTML= "delete"
-    buttond.setAttribute('onClick',"delete"+`(${sourc})`)
+    buttond.setAttribute('onClick',`delete_${data['entity']}(${data['id']})`);
     element.appendChild(buttond)
     return element
-
-
 }
 
 let sourc={

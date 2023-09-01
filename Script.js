@@ -11,7 +11,7 @@ async function getAdminStatus(){
 }
 
 async function main(){
-    isAdmin = getAdminStatus();
+    isAdmin = await getAdminStatus();
     const navbarList = [
         {value:"Opportunities", callback: "view_opportunities"},
         {value:"Transactions", callback: "view_transactions"},
@@ -29,7 +29,6 @@ async function main(){
     document.querySelector(".collapse").appendChild(createNavBar(navbarList));
     document.querySelector(".collapse").appendChild(createNavBar(AccountList));
     document.querySelector("#app").appendChild(dashboardcards(navbarList));
-    document.querySelector("#app").appendChild(deletecomp(sourc));
 }
 
 main();

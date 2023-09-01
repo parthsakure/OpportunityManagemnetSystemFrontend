@@ -47,7 +47,7 @@ function showDetailedView(rootElement, title, data, edit=true){
         rootElement.appendChild(div);
         const deleteBtn = document.createElement("button");
         deleteBtn.classList.add('btn','btn-danger','mx-3');
-        deleteBtn.setAttribute('onClick',`delete_${title.split(":")[0].toLowerCase()}(${id})`);
+        deleteBtn.setAttribute('onClick',`view_delete_${title.split(":")[0].toLowerCase()}(${id})`);
         deleteBtn.innerHTML="Delete"
         div.appendChild(deleteBtn);
 

@@ -41,7 +41,7 @@ function prepareCompanyForCreateForm(){
     let company = {};
     company['id'] = {name:"Id", type:"text",disabled:true, value:0};
     company['companyName'] = {name:"Name", type:"text"};
-    company['years'] = {name:"Description", type:"number"};
+    company['years'] = {name:"Years", type:"number"};
     company['location'] = {name:"Location", type:"dropdown"};
     company['industry'] = {name:"Industry", type:"dropdown"};
     company['websiteUrl'] = {name:"Website", type:"url"};
