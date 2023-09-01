@@ -2,7 +2,7 @@
 async function view_update_opportunity(id,method){
     form = document.querySelector("#form");
     opportunity = {};
-    opportunity['opportunityId'] = id;
+    opportunity['opportunityId'] = method=='PUT' ? id: 0;
     opportunity['title'] = form.querySelector('#title').value;
     opportunity['description'] = form.querySelector('#description').value;
     opportunity['primaryNeed'] = form.querySelector('#primaryNeed').value;
