@@ -2,16 +2,16 @@
 async function view_update_opportunity(id,method){
     form = document.querySelector("#form");
     opportunity = {};
-    opportunity['opportunityId'] = id;
+    opportunity['opportunityId'] = method=='PUT' ? id: 0;
     opportunity['title'] = form.querySelector('#title').value;
     opportunity['description'] = form.querySelector('#description').value;
     opportunity['primaryNeed'] = form.querySelector('#primaryNeed').value;
     opportunity['expectedMonthlyRevenue'] = form.querySelector('#expectedMonthlyRevenue').value;
     opportunity['expectedLaunchDate'] = Date.parse(form.querySelector('#expectedLaunchDate').value);
-    opportunity['closedLostReason'] = form.querySelector('#closedLostReason').value;
+    opportunity['closedLostReason'] = method=='PUT' ? form.querySelector('#dealStage').value : '';
     opportunity['deliveryModel'] = {deliveryModelId: form.querySelector('#deliveryModel').value};
-    opportunity['dealStage'] = {dealStageId : form.querySelector('#dealStage').value};
-    opportunity['dealOwner'] = {userId: form.querySelector('#dealOwner').value};
+    opportunity['dealStage'] = {dealStageId : method=='PUT' ? form.querySelector('#dealStage').value : 1};
+    opportunity['dealOwner'] = {userId: !isAdmin ? USER_ID : form.querySelector('#dealOwner').value};
 
     opportunity['useCases'] = [];
     options = form.querySelector('#useCases').options;
@@ -51,6 +51,7 @@ async function view_update_user(id,method){
     user['company'] = {companyId: form.querySelector('#company').value};
 
     data = null;
+    console.log(user);
     if(method=='PUT') 
     data = await updateUser(id, user);
 
