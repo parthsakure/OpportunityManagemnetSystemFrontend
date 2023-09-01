@@ -57,7 +57,8 @@ function prepareOpportunityDetails(data){
     opportunity["Description"] = data["description"];
     opportunity["Primary Need"] = data["primaryNeed"];
     opportunity["Expected Monthly Revenue"] = data["expectedMonthlyRevenue"];
-    opportunity["Expected Launch Date"] = data["expectedLaunchDate"];
+    const date = new Date(data["expectedLaunchDate"]);
+    opportunity["Expected Launch Date"] = date.toLocaleDateString();
     opportunity["Active"] = {value: data["active"] ? "Active" : "Not Active",classes:{value:data["active"]?[ "bg-success-subtle","border","border-success","rounded-pill" ]: ["bg-danger-subtle","border","border-danger","rounded-pill" ]}};
     opportunity["Delivery Model"] = data["deliveryModel"]["deliveryModel"];
     opportunity["Deal Stage"] = getDealStage(data["dealStage"]["dealStage"]);
