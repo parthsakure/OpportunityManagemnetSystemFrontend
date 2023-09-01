@@ -23,7 +23,7 @@ function prepareUserForDetails(data){
     user["Last Name"] = data["lastName"]; 
     user['E-mail'] = data["email"]; 
     user['Contact No.'] = data["contactNo"] ? data["contactNo"] : "N/A"; 
-    user['Company'] = data["company"] ? data["company"] : "N/A"; 
+    user['Company'] = data["company"] ? data["company"]['companyName'] : "N/A"; 
     user['BBD Bucks'] = data["bbdBucks"];
     const isActive = data["active"];
     user['Active'] = {value:isActive ? "Active" : "Not Active" ,classes:{value:(isActive ? ["bg-success-subtle", "border", "border-success",'rounded-pill'] :["bg-danger-subtle", "border", "border-danger",'rounded-pill'])}} 
