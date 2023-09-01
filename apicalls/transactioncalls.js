@@ -6,7 +6,6 @@ async function getAllTransactions()
             headers: getHeader()
         });
     var data = await response.json();
-    console.log(data);  
     return data; 
 }
 
@@ -18,6 +17,5 @@ async function getMyTransactions()
             headers: getHeader()
         });
     var data = await response.json();
-    console.log(data);  
     return data; 
 }

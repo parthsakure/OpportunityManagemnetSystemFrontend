@@ -1,6 +1,6 @@
-async function getDealStage()
+async function getCountry()
 {
-    var url = BASE_URL+"dealstages/";
+    var url = BASE_URL+"countries/";
     const response = await fetch(url,
         {
             headers: getHeader()

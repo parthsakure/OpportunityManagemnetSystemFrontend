@@ -1,7 +1,7 @@
 
-const BASE_URL= "https://opportunity-management.onrender.com/";
+const BASE_URL= "https://opportunity-p97n.onrender.com/";
 const TOKEN_NAME = "jwt_token"
-
+let isAdmin = false;
 const login_html = `
 <div class="google-login">
     <p class="fs-3">You Have to login to access this site</p> 
@@ -32,8 +32,6 @@ function createTitle(title){
     h1.classList.add("fs-1","mb-5","mt-3","ms-5")
     return h1;
 }
-
-
 function getHeader(){
     const token = localStorage.getItem(TOKEN_NAME);
     if(token==null){
@@ -43,21 +41,7 @@ function getHeader(){
     'Content-type': 'application/json'
 };
 }
-
-
-function parseJwt (token) {
-    var base64Url = token.split('.')[1];
-    var base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
-    var jsonPayload = decodeURIComponent(window.atob(base64).split('').map(function(c) {
-        return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
-    }).join(''));
-    
-    return JSON.parse(jsonPayload);
-}
-
-
 function saveToken(data){
-    // console.log(parseJwt(data))
     localStorage.setItem(TOKEN_NAME, data);
     location.reload();
 }

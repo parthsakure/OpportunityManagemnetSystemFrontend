@@ -1,6 +1,6 @@
-async function getAuthUser()
+async function getDealStages()
 {
-    var url = BASE_URL+"profile";
+    var url = BASE_URL+"dealstages/";
     const response = await fetch(url,
         {
             headers: getHeader()
@@ -9,4 +9,3 @@ async function getAuthUser()
     console.log(data);
     return data;
 }
-

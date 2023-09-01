@@ -1,6 +1,6 @@
-async function getLocations()
+async function getCompany()
 {
-    var url = BASE_URL+"location/";
+    var url = BASE_URL+"company/?active=true";
     const response = await fetch(url,
         {
             headers: getHeader()
@@ -10,9 +10,10 @@ async function getLocations()
     return data;
 }
 
-async function getLocationById(id)
+
+async function getCompanyById(id)
 {
-    var url = BASE_URL+"location/"+id;
+    var url = BASE_URL+"company/"+id+"?active=true";
     const response = await fetch(url,
         {
             headers: getHeader()
@@ -22,11 +23,12 @@ async function getLocationById(id)
     return data;
 }
 
-async function updateLocation(id, data)
+
+async function updateCompany(id, data)
 {
     try
     {
-        var url = BASE_URL+"location/"+id
+        var url = BASE_URL+"company/"+id;
         const response = await fetch(url, 
             {
                 method: 'PUT',
@@ -42,11 +44,32 @@ async function updateLocation(id, data)
     }
 }
 
-async function postLocation(data)
+
+async function deleteCompany(id)
 {
     try
     {
-        var url = BASE_URL+"location/";
+        var url = BASE_URL+"company/"+id
+        const response = await fetch(url, 
+            {
+                method: 'DELETE',
+                headers: getHeader()
+            });
+    
+            const resData = await response.json();
+            return resData; 
+    } catch (error)
+    {
+        console.log("Error:", error);
+    }
+}
+
+
+async function postCompany(data)
+{
+    try
+    {
+        var url = BASE_URL+"company/";
         const response = await fetch(url, 
             {
                 method: 'POST',
@@ -61,5 +84,4 @@ async function postLocation(data)
         console.log("Error:", error);
     }
 }
-
 

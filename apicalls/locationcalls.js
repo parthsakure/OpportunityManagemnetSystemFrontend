@@ -1,6 +1,6 @@
-async function getIndustries()
+async function getLocations()
 {
-    var url = BASE_URL+"industry/";
+    var url = BASE_URL+"location/";
     const response = await fetch(url,
         {
             headers: getHeader()
@@ -10,9 +10,9 @@ async function getIndustries()
     return data;
 }
 
-async function getIndustryById(id)
+async function getLocationById(id)
 {
-    var url = BASE_URL+"industry/"+id;
+    var url = BASE_URL+"location/"+id;
     const response = await fetch(url,
         {
             headers: getHeader()
@@ -22,11 +22,31 @@ async function getIndustryById(id)
     return data;
 }
 
-async function postIndustry(data)
+async function updateLocation(id, data)
 {
     try
     {
-        var url = BASE_URL+"industry/";
+        var url = BASE_URL+"location/"+id
+        const response = await fetch(url, 
+            {
+                method: 'PUT',
+                headers: getHeader(),
+                body: JSON.stringify(data)
+            });
+    
+            const resData = await response.json();
+            return resData; 
+    } catch (error)
+    {
+        console.log("Error:", error);
+    }
+}
+
+async function postLocation(data)
+{
+    try
+    {
+        var url = BASE_URL+"location/";
         const response = await fetch(url, 
             {
                 method: 'POST',
@@ -40,26 +60,5 @@ async function postIndustry(data)
     {
         console.log("Error:", error);
     }
-    
-}
-
-async function deleteIndustry(id)
-{
-    try
-    {
-        var url = BASE_URL+"opportunity/"+id
-        const response = await fetch(url, 
-            {
-                method: 'DELETE',
-                headers: getHeader()
-            });
-    
-            const resData = await response.json();
-            return resData; 
-    } catch (error)
-    {
-        console.log("Error:", error);
-    }
-    
 }
 

@@ -1,6 +1,6 @@
-async function getDeliveryModels()
+async function getIndustries()
 {
-    var url = BASE_URL+"deliverymodel/";
+    var url = BASE_URL+"industry/";
     const response = await fetch(url,
         {
             headers: getHeader()
@@ -10,9 +10,9 @@ async function getDeliveryModels()
     return data;
 }
 
-async function getDeliveryModelById(id)
+async function getIndustryById(id)
 {
-    var url = BASE_URL+"deliverymodel/"+id;
+    var url = BASE_URL+"industry/"+id;
     const response = await fetch(url,
         {
             headers: getHeader()
@@ -22,11 +22,11 @@ async function getDeliveryModelById(id)
     return data;
 }
 
-async function postDeliveryModel(data)
+async function postIndustry(data)
 {
     try
     {
-        var url = BASE_URL+"deliverymodel/";
+        var url = BASE_URL+"industry/";
         const response = await fetch(url, 
             {
                 method: 'POST',
@@ -43,7 +43,7 @@ async function postDeliveryModel(data)
     
 }
 
-async function deleteDeliveryModel(id)
+async function deleteIndustry(id)
 {
     try
     {
@@ -62,4 +62,3 @@ async function deleteDeliveryModel(id)
     }
     
 }
-

@@ -15,10 +15,11 @@ function createColumn(value, classes){
     return columnElement;
 }
 
-function createRow(row, headers, classes){
+function createRow(row, headers, classes,callback){
     //create new row Element
     const rowElement = document.createElement("tr");
-
+    rowElement.setAttribute("onClick", callback);
+    rowElement.style.cursor="pointer";
     //Add Classes if available
     if(classes) rowElement.classList.add(...classes);
 
@@ -30,9 +31,9 @@ function createRow(row, headers, classes){
     return rowElement;
 }
 
-function createTable(rootElement, data, append=false){
+function createTable(rootElement,title, data, create=false){
     //Create Table element
-    const headers= Object.keys(data[0]);
+    const headers= Object.keys(data[0]["value"]);
     table = document.createElement("table");
     table.classList.add("table","table-striped");
 
@@ -49,12 +50,24 @@ function createTable(rootElement, data, append=false){
     //create body element
     const bodyElement = document.createElement("tbody")
     data.forEach(row=>{
-        bodyElement.appendChild(createRow(row['value'] ? row['value'] : row, headers, row['classes']));
+        bodyElement.appendChild(createRow(row['value'] ? row['value'] : row, headers, row['classes'],row['callback']));
     });
     table.appendChild(bodyElement);
 
     //erase everything from root element
-    if(!append) rootElement.innerHTML = "";
-
+    rootElement.innerHTML = "";
+    rootElement.appendChild(createTitle(title));
     rootElement.appendChild(table);
+
+    if(create){
+        div = document.createElement("div");
+        div.classList.add('text-center','mt-4');
+        btn = document.createElement("button");
+        btn.setAttribute('onClick',`view_create_${title.toLowerCase()}()`);
+        btn.classList.add('btn','btn-success');
+        btn.innerHTML='Create';
+        div.appendChild(btn);
+        rootElement.appendChild(div);
+    }
+
 }

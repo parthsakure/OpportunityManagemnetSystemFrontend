@@ -69,6 +69,7 @@
 
 
     <script src="./initial.js"></script>
+    <script src="./dashboard.js"></script>
     <script src="./apicalls/authcalls.js"></script>
     <script src="./apicalls/companycalls.js"></script>
     <script src="./apicalls/countrycalls.js"></script>
@@ -81,16 +82,29 @@
     <script src="./apicalls/transactioncalls.js"></script>
     <script src="./apicalls/usecasecalls.js"></script>
     <script src="./apicalls/usercalls.js"></script>
+    <script src="./prepare/opportunity.js"></script>
+    <script src="./prepare/transaction.js"></script>
+    <script src="./prepare/company.js"></script>
+    <script src="./prepare/user.js"></script>
+    <script src="./prepare/location.js"></script>
     <script src="./details.js"></script>
     <script src="./navbar.js"></script>
     <script src="./table.js"></script>
+    <script src="./form.js"></script>
+    <script src="./delete.js"></script>
+    <script src="./views/table_views.js"></script>
+    <script src="./views/details_views.js"></script>
+    <script src="./views/edit_views.js"></script>
+    <script src="./views/update_views.js"></script>
+    <script src="./views/create_views.js"></script>
+    <script src="./views/delete_views.js"></script>
     <script src="./Script.js"></script>
+    
 </body>
 
 <script src="https://accounts.google.com/gsi/client" async defer></script>
 <script>
     function handleCredentialResponse(response) {
-        console.log("hello");
         saveToken(response.credential);
     }
 </script>
