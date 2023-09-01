@@ -10,8 +10,8 @@ async function view_update_opportunity(id,method){
     opportunity['expectedLaunchDate'] = Date.parse(form.querySelector('#expectedLaunchDate').value);
     opportunity['closedLostReason'] = method=='PUT' ? form.querySelector('#dealStage').value : '';
     opportunity['deliveryModel'] = {deliveryModelId: form.querySelector('#deliveryModel').value};
-    opportunity['dealStage'] = {dealStageId : method=='PUT' ? form.querySelector('#dealStage').value : '1'};
-    opportunity['dealOwner'] = {userId: !isAdmin ? uSER_ID : form.querySelector('#dealOwner').value};
+    opportunity['dealStage'] = {dealStageId : method=='PUT' ? form.querySelector('#dealStage').value : 1};
+    opportunity['dealOwner'] = {userId: !isAdmin ? USER_ID : form.querySelector('#dealOwner').value};
 
     opportunity['useCases'] = [];
     options = form.querySelector('#useCases').options;
