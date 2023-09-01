@@ -51,6 +51,7 @@ async function view_update_user(id,method){
     user['company'] = {companyId: form.querySelector('#company').value};
 
     data = null;
+    console.log(user);
     if(method=='PUT') 
     data = await updateUser(id, user);
 

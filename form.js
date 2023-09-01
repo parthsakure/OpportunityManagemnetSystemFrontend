@@ -130,58 +130,57 @@ async function getValues(entityName){
   values = null;
   switch (entityName) {
     case 'useCases':
-      console.log("rxdtcfyvgubhjmoikjbhugvfcdxcgbhj")
+      values = await getUseCase();
       id='useCaseId'
       name='useCase'
-      values = await getUseCase();
       break;
   
     case 'deliveryModel':
+      values = await getDeliveryModels();
       id='deliveryModelId'
       name='deliveryModel'
-      values = await getDeliveryModels();
       break;
   
     case 'dealStage':
+      values = await getDealStages();
       id='dealStageId'
       name='dealStage'
-      values = await getDealStages();
       break;
   
     case 'dealOwner':
+      values = await getUsers();
       id='userId'
       name='username'
-      values = await getUsers();
       break;
 
     case 'role':
+      values = await getRoles();
       id='roleId'
       name='role'
-      values = await getRoles();
       break;
     
     case 'company':
+      values = await getCompany();
       id='companyId'
       name='companyName'
-      values = await getCompany();
       break;
     
     case 'location':
+      values = await getLocations();
       id='locationId'
       name='postalCode'
-      values = await getLocations();
       break;
 
     case 'industry':
+      values = await getIndustries();
       id='industryId'
       name='industry'
-      values = await getIndustries();
       break;
 
     case 'country':
+      values = await getCountry();
       id='countryId'
       name='country'
-      values = await getCountry();
       break;
                     
         
@@ -208,6 +207,7 @@ async function createDropdownElement(data,x) {
   input.setAttribute('id',x);
   input.classList.add('form-control')
   let vals = await getValues(x);
+  console.log(vals);
   vals['values'].forEach(item => {
     option = document.createElement('option');
     option.setAttribute('value',item[vals['id']])
@@ -248,8 +248,6 @@ async function createDropdownElement(data,x) {
       label.innerHTML = data[x]['name'];
       subroot.appendChild(label);
       const input =  data[x]['type']!= 'dropdown' ? await createInputElement(data[x],x) : await createDropdownElement(data[x],x);
-      console.log(x);
-      console.log(input);
       subroot.appendChild(input);
       root.insertBefore(subroot, root.lastElementChild);
     });
