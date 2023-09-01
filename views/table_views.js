@@ -1,7 +1,12 @@
 async function view_opportunities(){
     const opportunitiesData = await getOpportunities();
     console.log(opportunitiesData);
+    if(opportunitiesData['message']!=null){
+    createTable(document.getElementById('app'),"Opportunities",[{value: {}}],true);
+    }
+    else{
     createTable(document.getElementById("app"),"Opportunities",prepareOpportunityForList(opportunitiesData),true)
+    }
 }
 
 async function view_transactions(){
