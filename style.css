@@ -83,9 +83,4 @@ input:disabled{
     background-color: rgb(227, 227, 227);
     cursor:not-allowed;
 }
- /* input[type="button"]:hover{
-color: green;
 
-
-
- } */
