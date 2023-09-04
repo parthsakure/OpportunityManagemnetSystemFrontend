@@ -1,5 +1,6 @@
 
 async function view_update_opportunity(id,method){
+    showspinner();
     form = document.querySelector("#form");
     opportunity = {};
     opportunity['opportunityId'] = method=='PUT' ? id: 0;
@@ -27,6 +28,7 @@ async function view_update_opportunity(id,method){
 else{
     data = await postOpportunity(opportunity)
 }
+hidespinner();
 if(data['title']==null){
     
 document.querySelector("#app").appendChild(createTitle(`Failed!`))
@@ -37,6 +39,7 @@ document.querySelector("#app").appendChild(createTitle(`Opportunity ${method=='P
 }
 
 async function view_update_user(id,method){
+    showspinner();
     form = document.querySelector("#form");
     user = {};
     user['userId'] = id;
@@ -54,7 +57,7 @@ async function view_update_user(id,method){
     console.log(user);
     if(method=='PUT') 
     data = await updateUser(id, user);
-
+    hidespinner();
     if(data['username']==null){
         
     document.querySelector("#app").appendChild(createTitle(`Failed!`))
@@ -65,6 +68,7 @@ async function view_update_user(id,method){
 }
 
 async function view_update_company(id,method){
+    showspinner();
     form = document.querySelector("#form");
     company = {};
     company['companyId'] = id;
@@ -84,6 +88,9 @@ async function view_update_company(id,method){
         company['companyId'] = 0;
         data = await postCompany(company);
     }
+    if(data){
+        hidespinner()
+    }
     document.querySelector('#app').innerHTML="";
     if(data['companyName']==null){
         
@@ -97,6 +104,7 @@ async function view_update_company(id,method){
 }
 
 async function view_update_location(id,method){
+    showspinner();
     form = document.querySelector("#form");
     loc = {};
     loc['locationId'] = id;
@@ -108,6 +116,9 @@ async function view_update_location(id,method){
     }
     else{
         data = await postLocation(loc);
+    }
+    if(data){
+        hidespinner()
     }
     console.log(data);
     document.querySelector('#app').innerHTML="";

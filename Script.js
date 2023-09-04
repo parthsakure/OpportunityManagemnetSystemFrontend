@@ -6,8 +6,10 @@ if(localStorage.getItem(TOKEN_NAME)==null){
 const root = document.querySelector("#app");
 
 async function getAdminStatus(){
+    showspinner();
     const user = await getAuthUser();
     USER_ID = user['userId'];
+    hidespinner();
     return user['role']['role'] === 'ROLE_ADMIN';
 }
 
@@ -27,6 +29,7 @@ async function main(){
         {value:"Profile", callback: "view_profile"},
         {value:"Log Out", callback: "view_logout"},
     ]
+
     document.querySelector(".collapse").appendChild(createNavBar(navbarList));
     document.querySelector(".collapse").appendChild(createNavBar(AccountList));
     document.querySelector("#app").appendChild(dashboardcards(navbarList));
