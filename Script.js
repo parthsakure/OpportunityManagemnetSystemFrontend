@@ -7,6 +7,7 @@ const root = document.querySelector("#app");
 
 async function getAdminStatus(){
     const user = await getAuthUser();
+    USER_ID = user['userId'];
     return user['role']['role'] === 'ROLE_ADMIN';
 }
 

@@ -57,7 +57,8 @@ function prepareOpportunityDetails(data){
     opportunity["Description"] = data["description"];
     opportunity["Primary Need"] = data["primaryNeed"];
     opportunity["Expected Monthly Revenue"] = data["expectedMonthlyRevenue"];
-    opportunity["Expected Launch Date"] = data["expectedLaunchDate"];
+    const date = new Date(data["expectedLaunchDate"]);
+    opportunity["Expected Launch Date"] = date.toLocaleDateString();
     opportunity["Active"] = {value: data["active"] ? "Active" : "Not Active",classes:{value:data["active"]?[ "bg-success-subtle","border","border-success","rounded-pill" ]: ["bg-danger-subtle","border","border-danger","rounded-pill" ]}};
     opportunity["Delivery Model"] = data["deliveryModel"]["deliveryModel"];
     opportunity["Deal Stage"] = getDealStage(data["dealStage"]["dealStage"]);
@@ -86,16 +87,16 @@ function prepareOpportunityForForm(data){
 function prepareOpportunityForCreateForm(){
     let opportunity = {};
     opportunity['id'] = {name:"Id", type:"text",disabled:true, value:0};
-    opportunity['title'] = {name:"Title", type:"text"};
-    opportunity['description'] = {name:"Description", type:"text"};
-    opportunity['primaryNeed'] = {name:"Primary Need", type:"text"};
-    opportunity['expectedMonthlyRevenue'] = {name:"Expected Monthly Revenue", type:"number"};
-    opportunity['expectedLaunchDate'] = {name:"Expected Launch Date", type:"date"};
-    opportunity['closedLostReason'] = {name:"Closed Lost Reason", type:"text"};
-    opportunity['deliveryModel'] = {name:"Delivery Model", type:"dropdown"};
-    opportunity['dealStage'] = {name:"Deal Stage", type:"dropdown"};
-    opportunity['dealOwner'] = {name:"Deal Owner", type:"dropdown"};
-    opportunity['useCases'] = {name:"Use Cases", type:"dropdown"};
+    opportunity['title'] = {name:"Title", type:"text", disabled: false};
+    opportunity['description'] = {name:"Description", type:"text", disabled: false};
+    opportunity['primaryNeed'] = {name:"Primary Need", type:"text", disabled: false};
+    opportunity['expectedMonthlyRevenue'] = {name:"Expected Monthly Revenue", type:"number", disabled: false};
+    opportunity['expectedLaunchDate'] = {name:"Expected Launch Date", type:"date", disabled: false};
+    opportunity['closedLostReason'] = {name:"Closed Lost Reason", type:"text", disabled: true};
+    opportunity['deliveryModel'] = {name:"Delivery Model", type:"dropdown", disabled: false};
+    opportunity['dealStage'] = {name:"Deal Stage", type:"dropdown", disabled: false};
+    opportunity['dealOwner'] = {name:"Deal Owner", type:"dropdown", disabled: false};
+    opportunity['useCases'] = {name:"Use Cases", type:"dropdown", disabled: false};
 
     return opportunity;
 };

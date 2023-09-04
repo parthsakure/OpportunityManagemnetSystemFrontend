@@ -12,6 +12,13 @@ body, h1, h2, h3, p, input, label {
     font-family: Arial, sans-serif;
 }
 
+.card-heights{
+    height: 25vh;
+    justify-content: center;
+    transition: 0.3s;
+}
+
+
 /* Style the form container */
 .details-flexbox {
     align-content: center;
@@ -84,9 +91,3 @@ input:disabled{
     cursor:not-allowed;
 }
 
- /* input[type="button"]:hover{
-color: green;
-
-
-
- } */

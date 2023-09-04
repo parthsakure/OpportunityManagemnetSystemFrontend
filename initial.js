@@ -2,6 +2,7 @@
 const BASE_URL= "https://opportunity-p97n.onrender.com/";
 const TOKEN_NAME = "jwt_token"
 let isAdmin = false;
+let USER_ID = null;
 let backButton=[];
 const login_html = `
 <div class="google-login">
