@@ -20,10 +20,11 @@ function dashboardcards(data) {
       "m-2",
       "p-2",
       "btn",
-      "btn-primary"
+      "btn-primary",
     );
     card.setAttribute("onClick", x["callback"] + "()");
     root.appendChild(card);
+    hidespinner();
   });
   return root;
 }
