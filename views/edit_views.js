@@ -1,7 +1,7 @@
 async function view_user_edit(id){
     showspinner();
-    const user = await view_user_edit(id);
-    backButton.push(` view_location_edit(${id})`)
+    const user = await updateUser(id);
+    backButton.push(` view_user_edit(${id})`)
     createForm(document.querySelector('#app'),'Update User', prepareUserForForm(user),'PUT');
     if(user){
         hidespinner();
