@@ -118,7 +118,10 @@ function createForm(rootElement,title, data, method) {
     root.appendChild(div);
     root.setAttribute("id", 'form' );
     // root.setAttribute("method", method );
-    root.setAttribute("onSubmit", `view_${method=='PUT'? 'update':'update'}_${title.split(' ')[1].toLowerCase()}(${method=='PUT' ? data['id']['value'] : 0},'${method}'); return false;`)
+    root.setAttribute("onSubmit",
+     redirect(method,title,data));
+     console.log(backButton);
+    // (`view_${method=='PUT'? 'update':'update'}_${title.split(' ')[1].toLowerCase()}(${method=='PUT' ? data['id']['value'] : 0},'${method}'); return false;`)
     rootElement.innerHTML = "";
     rootElement.appendChild(createTitle(title));
     rootElement.appendChild(root);

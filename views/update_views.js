@@ -1,5 +1,6 @@
 
 async function view_update_opportunity(id,method){
+    backButton.push(`view_update_opportunity(${id},${method})`)
     form = document.querySelector("#form");
     opportunity = {};
     opportunity['opportunityId'] = id;
@@ -37,6 +38,8 @@ document.querySelector("#app").appendChild(createTitle(`Opportunity ${method=='P
 }
 
 async function view_update_user(id,method){
+    backButton.push(`view_update_user(${id},${method})`)
+
     form = document.querySelector("#form");
     user = {};
     user['userId'] = id;
@@ -64,6 +67,7 @@ async function view_update_user(id,method){
 }
 
 async function view_update_company(id,method){
+    backButton.push(`view_update_company(${id},${method})`)
     form = document.querySelector("#form");
     company = {};
     company['companyId'] = id;
@@ -96,6 +100,8 @@ async function view_update_company(id,method){
 }
 
 async function view_update_location(id,method){
+    backButton.push(`view_update_location(${id},${method})`)
+
     form = document.querySelector("#form");
     loc = {};
     loc['locationId'] = id;

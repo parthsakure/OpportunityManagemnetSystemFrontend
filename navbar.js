@@ -14,6 +14,10 @@ function createNavItem(data){
 function createNavBar(data) {
     const list = document.createElement("ul");
     list.classList.add("navbar-nav",'me-auto','mb-2');
+    const btn =document.createElement("button")
+    btn.classList.add("btn","btn-light")
+    btn.setAttribute("value","back")
+    list.appendChild(btn)
     data.forEach(link => {
         list.appendChild(createNavItem(link));
     });
