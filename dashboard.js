@@ -6,9 +6,9 @@ function dashboardcards(data) {
 
   data.forEach((x) => {
     const card = document.createElement("div");
-    card.classList.add("col-md-3"); // Use Bootstrap's responsive column classes
+    card.classList.add("col-md-3",'card-heights'); // Use Bootstrap's responsive column classes
 
-    const title = document.createElement("div");
+    const title = document.createElement("p");
     console.log(x);
     title.innerHTML = x["value"];
 
